@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registrar Usuario</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Registrate en nuestro website:</h1>
+        </header>
+
+        <form action="registrar-usuario.php" method="post">
+            <hr />
+            <h3>Crea una cuenta</h3>
+
+            <!--Nombre Usuario-->
+            <div class="form-group">
+                <label for="nombre">Nombre de Usuario:</label><br>
+                <input type="text" name="username" maxlength="32" required>
+            </div>
+
+            <!--Password-->
+            <div class="form-group">
+                <label for="pass">Password:</label><br>
+                <input type="password" name="password" maxlength="8" required>
+            </div>
+
+            <!-- Captcha-->
+            <div class="form-group">
+                <img id="captcha" src="securimage/securimage_show.php" alt="CAPTCHA Image" />
+                <input type="text" name="captcha_code" size="10" maxlength="6" />
+                <a href="#"
+                    onclick="document.getElementById('captcha').src = '/securimage/securimage_show.php?' + Math.random(); return false">[
+                    Cambiar imagen ]</a>
+            </div>
+
+
+            <input type="submit" name="submit" value="Registrarme" class="btn btn-primary">
+        </form>
+    </div>
+
+</body>
+
+</html>
